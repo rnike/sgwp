@@ -1,7 +1,6 @@
 # sgwp
 
-貨出得去，人進得來
-
+Sell Goods Welcome People
 ## Getting Started
 
 This project is a starting point for a Flutter application.
