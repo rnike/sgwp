@@ -1,5 +1,13 @@
-import 'dart:math';
+/*
+  這是一個用來推廣 Flutter 的教學文件
+  為了方便所以將程式碼都放在一起了，如果製作較大的專案時建議可以將檔案分開以方便管理
 
+  作者：Mike
+  我羞羞臉的作品集網站：https://sites.google.com/view/mike-dev
+  聯絡我：yum650350@gmail.com
+*/
+
+import 'dart:math' show Random;
 import 'package:flame/components/component.dart';
 import 'package:flame/flame.dart';
 import 'package:flame/game.dart';
@@ -11,7 +19,7 @@ import 'package:flutter/services.dart';
 MyGame myGame;
 int score = 0;
 
-// 應用程式初始化
+/// 應用程式初始化
 void main() {
 
   // 設定應用程式為全螢幕
@@ -38,7 +46,7 @@ void main() {
 
 
 
-//我的遊戲
+///我的遊戲
 class MyGame extends BaseGame {
 
   ///新建 MyGame 這個物件時一定會跑到的方法，所以把初始化寫在這邊
@@ -101,7 +109,7 @@ class GameObject extends Component {
   ///遊戲物件類別
   ObjectType type;
 
-  //判斷是否進來或出去了
+  ///判斷是否進來或出去了
   bool isAway = false;
  
   GameObject(){
@@ -203,7 +211,7 @@ class GameObject extends Component {
 }
 
 
-//分數
+///分數
 class Scoreboard extends Component{
   @override
   void render(Canvas c) {
@@ -229,26 +237,6 @@ class Scoreboard extends Component{
   @override
   void update(double t) {
     //這個元件目前好像不需要 update
-  }
-}
-
-
-
-
-class Background extends Component {
-  @override
-  void render(Canvas c) { 
-
-    //背景的尺寸，使用 BaseGame resize 的值
-    final backgroundSize = Offset.zero & myGame.size;
-
-    //畫出簡單的純藍色背景
-    c.drawRect(backgroundSize, Paint()..color = Colors.blue);
-  }
-
-  @override
-  void update(double t) {
-    // 在這個專案中背景沒有什麼需要更新的
   }
 }
 
